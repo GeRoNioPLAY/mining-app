@@ -10,7 +10,8 @@ class CreateMiningsTable extends Migration
     {
         Schema::create('minings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->nullable();
             $table->foreignId('mining_device_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('cryptocurrency_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('algorithm_id')->constrained()->onDelete('cascade')->onUpdate('cascade');

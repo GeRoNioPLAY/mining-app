@@ -12,6 +12,11 @@ class Cryptocurrency extends Model
         'block_reward',
     ];
 
+    protected $casts = [
+        'network_difficulty' => 'float',
+        'block_reward' => 'float',
+    ];
+
     public function cryptocurrencyLists()
     {
         return $this->hasMany(CryptocurrencyList::class, 'cryptocurrency_id');
